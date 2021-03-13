@@ -13,7 +13,7 @@ h1 {
 }
 
 button {
-  padding: 10px;
+  /*padding: 10px; */
   border-radius: 10px;
 }
 
@@ -28,23 +28,28 @@ button {
 }
 
 #button1:active, #button1.lit {
-    background:green;
+  background-image: url( 'https://cdn.glitch.com/86ad74ce-b25c-4842-affd-d3e891a83acf%2FGreen%20Frog.jpg?v=1615132878027' );
+  background-size: 200px 200px; /* so that the entire image is shown in the button */
 }
+
 
 #button2 {
     background: lightblue ;
 }
 
 #button2:active, #button2.lit {
-    background:blue;
+  background-image: url( 'https://cdn.glitch.com/86ad74ce-b25c-4842-affd-d3e891a83acf%2FBlueWhale.jpg?v=1614994511797' );
+  background-size: 200px 200px; /* so that the entire image is shown in the button */
 }
+
 
 #button3 {
     background: pink ;
 }
 
 #button3:active, #button3.lit {
-    background:red;
+  background-image: url( 'https://cdn.glitch.com/86ad74ce-b25c-4842-affd-d3e891a83acf%2Fred%20bird.jpeg?v=1615132928170' );
+  background-size: 200px 200px; /* so that the entire image is shown in the button */
 }
 
 #button4 {
@@ -52,7 +57,44 @@ button {
 }
 
 #button4:active, #button4.lit {
-    background:yellow;
+  background-image: url( 'https://cdn.glitch.com/86ad74ce-b25c-4842-affd-d3e891a83acf%2Fyellow%20fish.jpeg?v=1615132960625' );
+  background-size: 200px 200px; /* so that the entire image is shown in the button */
+}
+
+#button5 {
+    background: #cc99ff ;
+}
+
+#button5:active, #button5.lit {
+  background-image: url( 'https://cdn.glitch.com/86ad74ce-b25c-4842-affd-d3e891a83acf%2Fpurple%20star.jpg?v=1615132999342' );
+  background-size: 200px 200px; /* so that the entire image is shown in the button */
+}
+
+#button6 {
+    background: #ffe0b3 ;
+}
+
+#button6:active, #button6.lit {
+  background-image: url( 'https://cdn.glitch.com/86ad74ce-b25c-4842-affd-d3e891a83acf%2Forange%20monkey.webp?v=1615133074543' );
+  background-size: 200px 200px; /* so that the entire image is shown in the button */
+}
+
+#button7 {
+    background: #cccccc ;
+}
+
+#button7:active, #button7.lit {
+  background-image: url( 'https://cdn.glitch.com/86ad74ce-b25c-4842-affd-d3e891a83acf%2Fkoala.jpg?v=1615133134278' );
+  background-size: 200px 200px; /* so that the entire image is shown in the button */
+}
+
+#button8 {
+    background: #996633 ;
+}
+
+#button8:active, #button8.lit {
+  background-image: url( 'https://cdn.glitch.com/86ad74ce-b25c-4842-affd-d3e891a83acf%2Fquokka.jpg?v=1615133218622' );
+  background-size: 200px 200px; /* so that the entire image is shown in the button */
 }
 
 .hidden {
