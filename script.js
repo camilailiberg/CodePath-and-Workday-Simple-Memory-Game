@@ -1,24 +1,29 @@
 // global constants
-const clueHoldTime = 1000; //how long to hold each clue's light/sound
 const cluePauseTime = 333; //how long to pause in between clues
 const nextClueWaitTime = 1000; //how long to wait before starting playback of the clue sequence
-var guessCounter = 0 ; // keeps treack of user's progress 0 - 8.
+
 
 //Global Variables
-var pattern = [2, 2, 4, 3, 2, 1, 2, 4];
+var pattern = [2, 8, 4, 1, 7, 3, 5, 6];
 var progress = 0; 
 var gamePlaying = false;
 var tonePlaying = false;
 var volume = 0.5;  //must be between 0.0 and 1.0
+var guessCounter = 0 ; // keeps treack of user's progress 0 - 8.
+var clueHoldTime = 1000; //how long to hold each clue's light/sound
+var mistakes = 0 ;
 
 function startGame(){
   //initialize game variables
   progress = 0;
   gamePlaying = true
+  mistakes = 0 ;
+  clueHoldTime = 1000 ;
   
   // swap the Start and Stop buttons
   document.getElementById("startBtn").classList.add("hidden");
   document.getElementById("stopBtn").classList.remove("hidden");
+  randomPattern() ;
   playClueSequence();
 }
 
@@ -28,12 +33,43 @@ function stopGame() {
   document.getElementById ("stopBtn").classList.add("hidden") ;
 }
 
+// Function to generate a random pattern.
+function randomPattern() 
+{
+  
+  var numbers = new Array(); // variable that make sure every button in the pattern is different
+  var rand = Math.floor(Math.random() * 8) + 1 ; // generating random number
+  
+  for( let i = 0 ; i <= 7 ; i++ ) // for every number in pattern . . .
+  {
+    
+    // make sure every button is part of the pattern
+    for ( let j = 0 ; j < numbers.length ; j++ ) // for every element in numbers
+      {
+        while (numbers[j] == rand) // if button already in pattern
+          {
+            rand = Math.floor(Math.random() * 8) + 1 ; // update random number
+            j = 0 ; // resets j to 0 to check new random number does not equal a previous random number in the pattern
+          }
+      }
+    pattern[ i ] = rand ; // set number at index i to rand in pattern
+    numbers[i] = rand ; // set number at index i to rand in numbers
+    rand = Math.floor(Math.random() * 8) + 1 ; // update random number
+    
+  }
+  
+}
+
 // Sound Synthesis Functions
 const freqMap = {
   1: 261.6,
   2: 329.6,
   3: 392,
-  4: 466.2
+  4: 466.2,
+  5: 540.4,
+  6: 614.6,
+  7: 688.8,
+  8: 763
 }
 function playTone(btn,len){ 
   o.frequency.value = freqMap[btn]
@@ -82,12 +118,13 @@ function playSingleClue(btn){
 }
 
 function playClueSequence(){
+  clueHoldTime = clueHoldTime - 100;
   guessCounter = 0 ;
   let delay = nextClueWaitTime; //set delay to initial wait time
   for(let i=0;i<=progress;i++){ // for each clue that is revealed so far
     console.log("play single clue: " + pattern[i] + " in " + delay + "ms")
     setTimeout(playSingleClue,delay,pattern[i]) // set a timeout to play that clue
-    delay += clueHoldTime 
+    delay += clueHoldTime
     delay += cluePauseTime;
   }
 }
@@ -116,7 +153,7 @@ function guess(btn){
     {
       
       console.log("guesscounter = " + guessCounter + " and progress = " + progress)
-      if ( progress == 7 ) // if game ended and player won . . .
+      if ( progress == pattern.length - 1 ) // if game ended and player won . . .
       {
         
         console.log("Game Over. You Wonnnn!!!")
@@ -146,7 +183,21 @@ function guess(btn){
   {
     
     console.log("Got the button " + btn + " wrong")
-    loseGame() ; // lose game
+    mistakes++ ; // keep count of how many mistakes the user has made
+    
+    if ( mistakes == 3 ) // if the user has made 3 mistakes . . .
+    {
+      
+      loseGame() ; // lose game
+      
+    }
+    else // if less than 3 mistakes . . .
+      {
+        alert("You can try again") ; // letting the player know that they can try again
+        clueHoldTime = clueHoldTime + 100 ; // so that the velocity that the images are shown does not increase when repeating the pattern
+        playClueSequence(); // repeat the correct sequence to the player
+        
+      }
     
   }
   
