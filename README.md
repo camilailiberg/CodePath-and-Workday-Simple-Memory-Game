@@ -3,7 +3,12 @@ Name: [Camila Iligaray.]
 
 1. If you used any outside resources to help complete your submission 
 (websites, books, people, etc) list them here. 
-- None.
+- https://www.w3schools.com/colors/colors_picker.asp
+- https://www.w3schools.com/js/js_random.asp
+- https://www.youtube.com/watch?v=dJl9fzbg4_A
+- https://stackoverflow.com/questions/8683528/embed-image-in-a-button-element
+- https://www.youtube.com/watch?v=4JfVwxF260k
+- https://www.tutorialsteacher.com/javascript/javascript-array#:~:text=You%20can%20initialize%20an%20array,element2%2C%20element3%2C...
 
 2. What was a challenge you encountered in creating this submission 
 (be specific)? How did you overcome it? (recommended 200 - 400 words) 
