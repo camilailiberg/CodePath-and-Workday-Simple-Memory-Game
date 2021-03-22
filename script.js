@@ -1,6 +1,6 @@
 // global constants
 const cluePauseTime = 333; //how long to pause in between clues
-const nextClueWaitTime = 1000; //how long to wait before starting playback of the clue sequence
+const nextClueWaitTime = 1500; //how long to wait before starting playback of the clue sequence
 
 
 //Global Variables
@@ -88,35 +88,26 @@ function randomPattern()
   
 }
 
-// Sound Synthesis Functions
-const freqMap = {
-  1: 261.6,
-  2: 329.6,
-  3: 392,
-  4: 466.2,
-  5: 540.4,
-  6: 614.6,
-  7: 688.8,
-  8: 763
-}
 function playTone(btn,len){ 
-  o.frequency.value = freqMap[btn]
-  g.gain.setTargetAtTime(volume,context.currentTime + 0.05,0.025)
+  
+  startTone(btn) ;
   tonePlaying = true
   setTimeout(function(){
-    stopTone()
+    stopTone(btn)
   },len)
 }
-function startTone(btn){
-  if(!tonePlaying){
-    o.frequency.value = freqMap[btn]
-    g.gain.setTargetAtTime(volume,context.currentTime + 0.05,0.025)
+function startTone(btn)
+{
+  if(!tonePlaying)
+  {
+    document.getElementById(btn).play();
     tonePlaying = true
   }
 }
-function stopTone(){
-    g.gain.setTargetAtTime(0,context.currentTime + 0.05,0.025)
-    tonePlaying = false
+function stopTone(btn){
+  document.getElementById(btn).pause();
+  document.getElementById(btn).currentTime = 0;
+  tonePlaying = false ;
 }
 
 //Page Initialization
