@@ -22,7 +22,8 @@ Name: [Camila Iligaray.]
 I overcame it by checking my code with the version of the guess function provided by CodePath and realize that I was 
 checking if progress was equal to 8 instead of 7. This is because I had forgotten that progress started at 0 instead of 1, 
 so I was checking if progress was equal to 8 (the length of the pattern) but because progress started at 0 I had to check if 
-progress was equal to 7, not 8. After fixing that my code worked correctly and I didn't face any other challenges.
+progress was equal to 7, not 8. After fixing that my code worked correctly.
+- Another challenge that I faced was changing the audio of the buttons. I overcame it by realizing that when I created the new function for the audio, I wasn't chacking nor updating the tonePlaying variable. Once I added the if statement that checked if the tone was playing and updated the tonePlaying variable, I was able to overcame this challenge.
 
 
 3. What questions about web development do you have after completing your submission? 
