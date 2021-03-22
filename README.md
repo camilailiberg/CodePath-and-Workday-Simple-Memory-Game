@@ -9,6 +9,9 @@ Name: [Camila Iligaray.]
 - https://stackoverflow.com/questions/8683528/embed-image-in-a-button-element
 - https://www.youtube.com/watch?v=4JfVwxF260k
 - https://www.tutorialsteacher.com/javascript/javascript-array#:~:text=You%20can%20initialize%20an%20array,element2%2C%20element3%2C...
+- https://www.geeksforgeeks.org/how-to-avoid-a-new-line-with-tag/
+- https://www.w3schools.com/jsref/met_win_setinterval.asp
+- https://www.w3schools.com/jsref/met_win_clearinterval.asp
 
 2. What was a challenge you encountered in creating this submission 
 (be specific)? How did you overcome it? (recommended 200 - 400 words) 

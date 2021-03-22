@@ -17,6 +17,11 @@ button {
   border-radius: 10px;
 }
 
+/* This is so that the Timer: <time> show in the same line */
+#timer {
+  display: inline ;
+}
+
 #gameButtonArea > button {
   width:200px ;
   height:200px ;
