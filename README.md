@@ -12,6 +12,7 @@ Name: [Camila Iligaray.]
 - https://www.geeksforgeeks.org/how-to-avoid-a-new-line-with-tag/
 - https://www.w3schools.com/jsref/met_win_setinterval.asp
 - https://www.w3schools.com/jsref/met_win_clearinterval.asp
+- https://stackoverflow.com/questions/14834520/html5-audio-stop-function
 
 2. What was a challenge you encountered in creating this submission 
 (be specific)? How did you overcome it? (recommended 200 - 400 words) 
