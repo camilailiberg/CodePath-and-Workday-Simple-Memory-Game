@@ -13,6 +13,7 @@ Name: [Camila Iligaray.]
 - https://www.w3schools.com/jsref/met_win_setinterval.asp
 - https://www.w3schools.com/jsref/met_win_clearinterval.asp
 - https://stackoverflow.com/questions/14834520/html5-audio-stop-function
+- https://programminghead.com/how-to-play-audio-in-html-using-javascript/
 
 2. What was a challenge you encountered in creating this submission 
 (be specific)? How did you overcome it? (recommended 200 - 400 words) 
