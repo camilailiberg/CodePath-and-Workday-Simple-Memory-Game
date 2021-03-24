@@ -42,13 +42,17 @@ function stopGame() {
 // Decrease the time for the use to hea and repeat the patter by one second and
 // checks if the player ran out of time.
 function myTimer() {
-  t = t - 1
-  document.getElementById("timer").innerHTML = t ;
-  if ( t < 0 )
+  if ( t == 0 )
   {
     timeout() ;
   }
+  else
+  {
+    t = t - 1 ;
+    document.getElementById("timer").innerHTML = t ;
+  }
 }
+
 // Resets the timer back to 12.
 function resetTimer(){
   clearInterval(timerVar) ;
